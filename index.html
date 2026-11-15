@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omotomilola Jegede — Public Health Researcher & Data Analyst</title>
+  <meta name="description" content="Omotomilola Jegede | PhD Candidate in Health Services Research at Old Dominion University | Public Health, Biostatistics, Mathematical Modeling, Data Analytics" />
+  <meta name="author" content="Omotomilola Jegede" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --navy:   #243B5A;
+      --mid:    #4F6F9A;
+      --accent: #8EC5E8;
+      --accent-dark: #5A8FC2;
+      --gold:   #9B8AC4;
+      --cream:  #F7FBFF;
+      --warm:   #EAF3FA;
+      --text:   #2e2931;
+      --muted:  #716a75;
+      --border: rgba(36,59,90,0.12);
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans:  'DM Sans', system-ui, sans-serif;
+      --ease: cubic-bezier(0.25,0.46,0.45,0.94);
+      --r: 10px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--cream); color: var(--text); font-size: 16px; line-height: 1.75; }
+    a { color: var(--accent-dark); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 60px; height: 60px;
+    }
+    .nav-brand { font-family: var(--serif); font-size: 1.05rem; color: #fff; letter-spacing: 0.02em; }
+    .nav-links { display: flex; gap: 6px; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.76); font-size: 0.82rem; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 6px 14px; border-radius: 4px;
+      transition: background 0.2s var(--ease), color 0.2s;
+    }
+    .nav-links a:hover { background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; }
+    .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.4rem; cursor: pointer; }
+
+    #home {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      align-items: stretch;
+      padding: 0 60px;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+    #home::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 700px 600px at 20% 60%, rgba(142,197,232,0.28), transparent),
+        radial-gradient(ellipse 400px 400px at 10% 90%, rgba(155,138,196,0.12), transparent);
+      pointer-events: none; z-index: 0;
+    }
+    #home::after {
+      content: ''; position: absolute; top: 0; left: 50%; width: 1px; height: 100%;
+      background: rgba(255,255,255,0.07); z-index: 1;
+    }
+    .hero-inner {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 100px 60px 60px; position: relative; z-index: 2;
+    }
+    .hero-photo-panel { position: relative; overflow: hidden; }
+    .hero-photo {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+      object-position: center top; display: block; filter: brightness(0.9) contrast(1.04);
+      opacity: 0; transition: opacity 1.4s ease-in-out; pointer-events: none;
+    }
+    .hero-photo.active { opacity: 1; }
+    .hero-photo-panel::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        linear-gradient(to right, var(--navy) 0%, transparent 18%),
+        linear-gradient(to bottom, var(--navy) 0%, transparent 14%),
+        linear-gradient(to top, var(--navy) 0%, transparent 18%);
+      z-index: 1; pointer-events: none;
+    }
+    .hero-photo-panel::after {
+      content: ''; position: absolute; inset: 0; background: rgba(36,59,90,0.14);
+      z-index: 1; pointer-events: none;
+    }
+    .hero-text { color: #fff; animation: fadeUp 0.8s var(--ease) both; }
+    .hero-eyebrow {
+      font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: #d5b6ec; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+    }
+    .hero-eyebrow::before { content: ''; display: inline-block; width: 32px; height: 1px; background: #d5b6ec; }
+    .hero-name {
+      font-family: var(--serif); font-size: clamp(2.7rem, 4.5vw, 4.55rem);
+      line-height: 1.1; font-weight: 900; margin-bottom: 20px; color: #fff;
+    }
+    .hero-name em { font-style: italic; color: rgba(255,255,255,0.56); display: block; font-size: 0.48em; margin-bottom: 6px; font-weight: 700; }
+    .hero-desc { font-size: 1.02rem; color: rgba(255,255,255,0.73); max-width: 500px; margin-bottom: 32px; font-weight: 300; line-height: 1.75; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+    .tag { font-size: 0.76rem; padding: 5px 14px; border: 1px solid rgba(255,255,255,0.19); border-radius: 40px; color: rgba(255,255,255,0.68); letter-spacing: 0.04em; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: var(--r); font-size: 0.88rem; font-weight: 500; transition: all 0.25s var(--ease); cursor: pointer; }
+    .btn-primary { background: var(--accent); color: #fff; border: 2px solid var(--accent); }
+    .btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); transform: translateY(-2px); text-decoration: none; }
+    .btn-outline { background: transparent; color: rgba(255,255,255,0.88); border: 2px solid rgba(255,255,255,0.26); }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.72); color: #fff; transform: translateY(-2px); text-decoration: none; }
+    .hero-contact {
+      position: absolute; bottom: 0; left: 0; right: 0; z-index: 3; padding: 40px 32px 28px;
+      background: linear-gradient(to top, rgba(36,59,90,0.96) 0%, rgba(36,59,90,0.57) 65%, transparent 100%);
+      display: flex; flex-direction: column; gap: 9px;
+    }
+    .hero-contact-item { display: flex; align-items: center; gap: 10px; font-size: 0.84rem; color: rgba(255,255,255,0.9); }
+    .hero-contact-item i { color: #d5b6ec; width: 18px; text-align: center; }
+    .hero-contact-item a { color: rgba(255,255,255,0.9); }
+    .hero-contact-item a:hover { color: #fff; text-decoration: none; }
+    .social-row { display: flex; gap: 10px; margin-top: 14px; }
+    .social-row a {
+      width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.82); font-size: 0.9rem; transition: all 0.2s;
+    }
+    .social-row a:hover { background: var(--accent); border-color: var(--accent); color: #fff; text-decoration: none; }
+
+    .section { padding: 90px 60px; }
+    .section:nth-child(even) { background: var(--warm); }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-header { display: flex; align-items: baseline; gap: 20px; margin-bottom: 56px; }
+    .section-label { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-dark); white-space: nowrap; }
+    .section-title { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--navy); line-height: 1.15; }
+    .section-rule { flex: 1; height: 1px; background: var(--border); margin-bottom: 4px; }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .about-body p { color: var(--muted); margin-bottom: 18px; }
+    .about-body p strong { color: var(--navy); }
+    .affiliations { display: flex; flex-direction: column; gap: 16px; }
+    .affil-card { background: #fff; border: 1px solid var(--border); border-radius: var(--r); padding: 20px 22px; display: flex; gap: 16px; align-items: flex-start; transition: box-shadow 0.2s; }
+    .affil-card:hover { box-shadow: 0 8px 30px rgba(36,59,90,0.08); }
+    .affil-icon { width: 40px; height: 40px; border-radius: 8px; background: var(--navy); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.95rem; flex-shrink: 0; }
+    .affil-card h4 { font-size: 0.9rem; font-weight: 500; color: var(--navy); margin-bottom: 2px; }
+    .affil-card p { font-size: 0.8rem; color: var(--muted); margin: 0; }
+
+    .research-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+    .research-card { background: #fff; border: 1px solid var(--border); border-radius: var(--r); padding: 28px 26px; position: relative; overflow: hidden; transition: transform 0.25s var(--ease), box-shadow 0.25s; }
+    .research-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.3s var(--ease); }
+    .research-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(36,59,90,0.10); }
+    .research-card:hover::before { transform: scaleX(1); }
+    .research-card .icon { font-size: 1.6rem; margin-bottom: 16px; }
+    .research-card h3 { font-family: var(--serif); font-size: 1.05rem; color: var(--navy); margin-bottom: 10px; }
+    .research-card p { font-size: 0.84rem; color: var(--muted); line-height: 1.65; }
+
+    .awards-list { display: flex; flex-direction: column; gap: 0; max-width: 800px; }
+    .award-item { display: grid; grid-template-columns: 80px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--border); align-items: start; }
+    .award-item:first-child { border-top: 1px solid var(--border); }
+    .award-year { font-family: var(--serif); font-size: 1.5rem; color: var(--navy); font-weight: 700; opacity: 0.38; line-height: 1; padding-top: 4px; }
+    .award-body h4 { font-size: 1rem; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
+    .award-body p { font-size: 0.85rem; color: var(--muted); margin: 0; }
+
+    .badge { display: inline-flex; align-items: center; gap: 5px; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px; border-radius: 40px; }
+    .badge-paper { background: #eee1f7; color: #6b3b89; }
+    .badge-talk { background: #fef3c7; color: #92400e; }
+    .badge-project { background: #d1fae5; color: #065f46; }
+    .badge-award { background: #fce7f3; color: #9d174d; }
+
+    .portfolio-section { background: var(--cream); }
+    .featured-post { background: var(--navy); border-radius: 16px; padding: 48px 52px; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; margin-bottom: 40px; position: relative; overflow: hidden; }
+    .featured-post::before { content: ''; position: absolute; top: -60px; right: -60px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(142,197,232,0.30), transparent 70%); pointer-events: none; }
+    .featured-label { font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: #d5b6ec; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .featured-label::before { content: ''; display: inline-block; width: 20px; height: 1px; background: #d5b6ec; }
+    .featured-post h3 { font-family: var(--serif); font-size: clamp(1.3rem, 2.5vw, 1.8rem); color: #fff; line-height: 1.25; margin-bottom: 14px; }
+    .featured-post > div > p { color: rgba(255,255,255,0.64); font-size: 0.92rem; max-width: 560px; margin-bottom: 22px; }
+    .featured-meta { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .featured-date { font-size: 0.78rem; color: rgba(255,255,255,0.45); letter-spacing: 0.04em; }
+    .featured-stamp { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 20px 28px; text-align: center; flex-shrink: 0; min-width: 130px; }
+    .featured-stamp .stamp-icon { font-size: 2rem; margin-bottom: 8px; }
+    .featured-stamp p { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin: 0; letter-spacing: 0.06em; text-transform: uppercase; }
+
+    .news-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .news-card { background: #fff; border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.22s var(--ease), box-shadow 0.22s; }
+    .news-card:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(36,59,90,0.10); }
+    .news-thumb { width: 100%; height: 185px; object-fit: cover; flex-shrink: 0; display: block; }
+    .news-thumb-placeholder { width: 100%; height: 160px; flex-shrink: 0; background: var(--warm); display: flex; align-items: center; justify-content: center; font-size: 3rem; border-bottom: 1px solid var(--border); }
+    .news-card-text { display: flex; flex-direction: column; flex: 1; padding: 16px; gap: 8px; }
+    .news-card-text h4 { font-family: var(--serif); font-size: 0.92rem; color: var(--navy); line-height: 1.35; }
+    .news-card-text p { font-size: 0.8rem; color: var(--muted); line-height: 1.6; flex: 1; }
+    .news-card-footer { display: flex; justify-content: space-between; align-items: center; padding: 10px 16px; border-top: 1px solid var(--border); margin-top: auto; }
+    .news-date { font-size: 0.74rem; color: var(--muted); }
+    .news-link { font-size: 0.77rem; font-weight: 500; color: var(--accent-dark); display: flex; align-items: center; gap: 4px; }
+    .news-link:hover { text-decoration: underline; }
+
+    .contact-section { background: var(--warm); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .contact-info p { color: var(--muted); margin-bottom: 30px; font-size: 1rem; font-weight: 300; }
+    .contact-detail { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 20px; }
+    .contact-detail i { color: var(--accent-dark); font-size: 1rem; margin-top: 3px; width: 18px; }
+    .contact-detail div { font-size: 0.88rem; }
+    .contact-detail span { display: block; color: var(--muted); font-size: 0.75rem; margin-bottom: 2px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .contact-detail a, .contact-detail strong { color: var(--navy); }
+    .collab-areas { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .collab-areas li { display: flex; align-items: center; gap: 12px; font-size: 0.9rem; color: var(--text); }
+    .collab-areas li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+
+    footer { background: #170b20; color: rgba(255,255,255,0.42); text-align: center; padding: 24px 40px; font-size: 0.78rem; letter-spacing: 0.07em; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 900px) {
+      #home { grid-template-columns: 1fr; padding: 60px 0 0; }
+      #home::after { display: none; }
+      .hero-photo-panel { min-height: 72vw; order: -1; }
+      .hero-inner { padding: 40px 32px 60px; max-width: 100%; }
+      .section { padding: 70px 36px; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .featured-post { grid-template-columns: 1fr; padding: 32px 28px; }
+      .featured-stamp { display: none; }
+      .news-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: var(--navy); padding: 16px; gap: 4px; }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+    }
+    @media (max-width: 600px) {
+      .hero-inner { padding: 30px 20px 50px; }
+      .section { padding: 60px 20px; }
+      nav { padding: 0 20px; }
+      .news-grid { grid-template-columns: 1fr; }
+      .hero-name { font-size: clamp(2.35rem, 13vw, 3.4rem); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="nav-brand">Omotomilola Jegede</span>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="https://scholar.google.com/citations?user=y7b6GlEAAAAJ&hl=en" target="_blank" rel="noopener">Publications</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div style="background: var(--navy); position: relative;">
+    <section id="home">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="hero-eyebrow">PhD Candidate · Old Dominion University</p>
+          <h1 class="hero-name"><em>Hello, I'm</em>Omotomilola<br>Jegede</h1>
+          <p class="hero-desc">
+            I am a public health researcher and data analyst applying statistical, mathematical, and computational methods to understand complex health challenges and translate data into evidence that can improve communities.
+          </p>
+          <div class="hero-tags">
+            <span class="tag">Public Health Research</span>
+            <span class="tag">Biostatistics</span>
+            <span class="tag">Mathematical Modeling</span>
+            <span class="tag">Data Analytics</span>
+            <span class="tag">Substance Use Research</span>
+          </div>
+          <div class="hero-actions">
+            <a href="https://scholar.google.com/citations?user=y7b6GlEAAAAJ&hl=en" target="_blank" rel="noopener" class="btn btn-primary">
+              <i class="fas fa-book-open"></i> View Publications
+            </a>
+            <a href="assets/Omotomilola_Jegede_Resume_Aug_2026.docx" download class="btn btn-outline">
+              <i class="fas fa-download"></i> Download Resume
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-photo-panel">
+        <img class="hero-photo active" src="assets/omotomilola-portrait.jpg" alt="Omotomilola Jegede professional portrait" />
+        <img class="hero-photo" src="assets/omotomilola-award.jpeg" alt="Omotomilola Jegede at an Old Dominion University recognition event" />
+
+        <div class="hero-contact">
+          <div class="hero-contact-item"><i class="fas fa-envelope"></i><a href="mailto:Ojege001@odu.edu">Ojege001@odu.edu</a></div>
+          <div class="hero-contact-item"><i class="fas fa-map-marker-alt"></i> Norfolk, Virginia, USA</div>
+          <div class="hero-contact-item"><i class="fas fa-university"></i> Old Dominion University</div>
+          <div class="social-row">
+            <a href="https://scholar.google.com/citations?user=y7b6GlEAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+            <a href="https://www.linkedin.com/in/omotomilola-jegede" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:Ojege001@odu.edu" title="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="about" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Background</span>
+        <h2 class="section-title">About Me</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-body">
+          <p>My name is <strong>Omotomilola Jegede</strong>. I am a <strong>PhD Candidate in Health Services Research (Public Health) at Old Dominion University</strong>, with a multidisciplinary background spanning statistics, computational and applied mathematics, public health, research, and data analytics.</p>
+          <p>I hold a <strong>Master of Science in Computational and Applied Mathematics</strong> from Old Dominion University and a <strong>Master of Science in Mathematical Sciences (Statistics)</strong> from Georgia Southern University. I earned my B.Tech. in Mathematical Sciences with a concentration in Industrial Mathematics from the Federal University of Technology Akure.</p>
+          <p>My work uses quantitative and qualitative methods to examine public health challenges, including <strong>substance misuse and overdose, infectious disease dynamics, health disparities, chronic disease, community health, and program evaluation</strong>. I work across the research lifecycle, from survey design and data management to statistical analysis, visualization, interpretation, and dissemination.</p>
+          <p>Alongside research, I have served in major graduate leadership roles at ODU, including <strong>President of the Graduate Students Government Association</strong>, while supporting faculty development, student success, and academic-community engagement.</p>
+        </div>
+        <div class="affiliations">
+          <div class="affil-card"><div class="affil-icon"><i class="fas fa-heart-pulse"></i></div><div><h4>Joint School of Public Health at ODU & NSU</h4><p>Research, teaching, faculty development, program evaluation, and public health data analysis.</p></div></div>
+          <div class="affil-card"><div class="affil-icon"><i class="fas fa-chart-line"></i></div><div><h4>Quantitative & Statistical Research</h4><p>R, Python, SAS, SPSS, Minitab, Power BI, mathematical modeling, and applied quantitative methods.</p></div></div>
+          <div class="affil-card"><div class="affil-icon"><i class="fas fa-users"></i></div><div><h4>Graduate Students Government Association</h4><p>President, with prior service as Acting/Vice President and other university leadership roles.</p></div></div>
+          <div class="affil-card"><div class="affil-icon"><i class="fas fa-building-columns"></i></div><div><h4>Professional Communities</h4><p>American Public Health Association, Virginia Public Health Association, American Statistical Association, and American Mathematical Society.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Work</span>
+        <h2 class="section-title">Research Interests</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="research-grid">
+        <div class="research-card"><div class="icon">📊</div><h3>Public Health Data Analytics</h3><p>Using statistical analysis, visualization, and data interpretation to identify patterns, assess risk factors, and support evidence-based health decisions.</p></div>
+        <div class="research-card"><div class="icon">🧮</div><h3>Mathematical & Statistical Modeling</h3><p>Applying stochastic, regression, and quantitative models to health systems, disease processes, epidemiological outcomes, and population-level questions.</p></div>
+        <div class="research-card"><div class="icon">🧬</div><h3>Infectious Disease Modeling</h3><p>Studying epidemic dynamics, vaccination effects, wastewater surveillance, and related public health responses through mathematical and statistical methods.</p></div>
+        <div class="research-card"><div class="icon">🫶</div><h3>Substance Use & Overdose</h3><p>Examining substance misuse, opioid and fentanyl harms, overdose mortality, and vulnerable populations to inform prevention and harm-reduction strategies.</p></div>
+        <div class="research-card"><div class="icon">🏥</div><h3>Health Services & Community Research</h3><p>Investigating health disparities, community needs, chronic disease experiences, access, program outcomes, and population health across diverse groups.</p></div>
+        <div class="research-card"><div class="icon">🎓</div><h3>Program Evaluation & Public Health Education</h3><p>Designing surveys, analyzing outcomes, improving academic and practicum processes, and building evidence-based training resources for students and faculty.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="awards" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Recognition</span>
+        <h2 class="section-title">Awards & Honors</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="awards-list">
+        <div class="award-item"><div class="award-year">2026</div><div class="award-body"><h4>Monarch Pillar of Innovation and Excellence Award</h4><p>Old Dominion University recognition, February 2026.</p></div></div>
+        <div class="award-item"><div class="award-year">2026</div><div class="award-body"><h4>Graduate Summer Award Program (GSAP)</h4><p>Competitive graduate research support from The Graduate School at ODU and the Division of Research and Economic Development.</p></div></div>
+        <div class="award-item"><div class="award-year">2025</div><div class="award-body"><h4>Leadership Initiative of the Year Award</h4><p>Graduate Students Government Association Annual Research Conference.</p></div></div>
+        <div class="award-item"><div class="award-year">2024</div><div class="award-body"><h4>Ellen Neufeldt Graduate Leader of the Year Award</h4><p>Recognition for graduate student leadership at Old Dominion University.</p></div></div>
+        <div class="award-item"><div class="award-year">2022</div><div class="award-body"><h4>Board of Visitors Recognition Award of Excellence</h4><p>Old Dominion University Board of Visitors recognition.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="section portfolio-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Selected Work</span>
+        <h2 class="section-title">Research & Portfolio</h2>
+        <div class="section-rule"></div>
+      </div>
+
+      <div class="featured-post">
+        <div>
+          <p class="featured-label">Featured · Recent Publication</p>
+          <span class="badge badge-paper" style="margin-bottom:16px;">📄 Journal of Family Issues · 2026</span>
+          <h3>Factors Influencing the Life Satisfaction of Grandparents Raising Grandchildren: A Qualitative Study</h3>
+          <p>Co-authored research examining social factors, caregiving challenges, resilience, support systems, and life satisfaction among grandparents raising grandchildren.</p>
+          <div class="featured-meta">
+            <span class="featured-date">Published online March 5, 2026</span>
+            <a href="https://journals.sagepub.com/doi/10.1177/0192513X261432575" target="_blank" rel="noopener" class="news-link" style="color:rgba(255,255,255,0.72); margin-left:4px;">Read article <i class="fas fa-arrow-right" style="font-size:0.7rem"></i></a>
+          </div>
+        </div>
+        <div class="featured-stamp"><div class="stamp-icon">🫶</div><p>Family & Community Health</p></div>
+      </div>
+
+      <div class="news-grid">
+        <div class="news-card">
+          <img class="news-thumb" src="assets/omotomilola-award.jpeg" alt="Omotomilola Jegede at an Old Dominion University event" />
+          <div class="news-card-text">
+            <span class="badge badge-award">🏅 Research Day</span>
+            <h4>Hidden Patterns, Urgent Realities: Uncovering Substance Misuse and Overdose Trends in Greater Hampton Roads</h4>
+            <p>Public health research examining regional substance misuse, opioid-related harms, and overdose trends across Greater Hampton Roads.</p>
+          </div>
+          <div class="news-card-footer"><span class="news-date">2025</span><a class="news-link" href="https://www.odu.edu/hidden-patterns-urgent-realities-uncovering-substance-misuse-and-overdose-trends-greater-hampton" target="_blank" rel="noopener">ODU <i class="fas fa-arrow-right" style="font-size:0.7rem"></i></a></div>
+        </div>
+
+        <div class="news-card">
+          <div class="news-thumb-placeholder">👵🏾</div>
+          <div class="news-card-text">
+            <span class="badge badge-paper">📄 Journal Article</span>
+            <h4>Bridging the Gap: Critical Resources for Grandparent Caregivers and Their Grandchildren</h4>
+            <p>Research focused on the resources and supports that grandparent and kinship caregivers identify as important for family well-being.</p>
+          </div>
+          <div class="news-card-footer"><span class="news-date">2026</span><a class="news-link" href="https://scholarworks.wmich.edu/grandfamilies/vol8/iss2/11/" target="_blank" rel="noopener">Read <i class="fas fa-arrow-right" style="font-size:0.7rem"></i></a></div>
+        </div>
+
+        <div class="news-card">
+          <div class="news-thumb-placeholder">🧪</div>
+          <div class="news-card-text">
+            <span class="badge badge-paper">📄 Biomedical Statistics</span>
+            <h4>Poisson Regression Model With Application to Wastewater Surveillance Under a Threshold Linear Mixed Model for COVID-19 Sensitivity Rates</h4>
+            <p>Co-authored work applying statistical modeling to wastewater surveillance and thresholds relevant to public health response.</p>
+          </div>
+          <div class="news-card-footer"><span class="news-date">2023</span><a class="news-link" href="https://digitalcommons.odu.edu/mathstat_fac_pubs/278/" target="_blank" rel="noopener">Read <i class="fas fa-arrow-right" style="font-size:0.7rem"></i></a></div>
+        </div>
+
+        <div class="news-card">
+          <div class="news-thumb-placeholder">🦠</div>
+          <div class="news-card-text">
+            <span class="badge badge-project">📘 Book Chapter</span>
+            <h4>On a Novel SVEIRS Markov Chain Epidemic Model with Multiple Discrete Delays and Infection Rates</h4>
+            <p>Modeling and sensitivity analysis examining infection dynamics and vaccination effects in an epidemiological Markov-chain framework.</p>
+          </div>
+          <div class="news-card-footer"><span class="news-date">2023</span><a class="news-link" href="https://doi.org/10.1016/B978-0-32-399557-3.00009-0" target="_blank" rel="noopener">DOI <i class="fas fa-arrow-right" style="font-size:0.7rem"></i></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Get in Touch</span>
+        <h2 class="section-title">Contact</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>I am interested in research and collaborative opportunities involving public health analytics, health services research, biostatistics, mathematical modeling, community health, program evaluation, and data-informed decision-making.</p>
+          <div class="contact-detail"><i class="fas fa-envelope"></i><div><span>Email</span><a href="mailto:Ojege001@odu.edu">Ojege001@odu.edu</a></div></div>
+          <div class="contact-detail"><i class="fas fa-map-marker-alt"></i><div><span>Location</span><strong>Old Dominion University · Norfolk, Virginia</strong></div></div>
+          <div class="contact-detail"><i class="fab fa-linkedin"></i><div><span>LinkedIn</span><a href="https://www.linkedin.com/in/omotomilola-jegede" target="_blank" rel="noopener">linkedin.com/in/omotomilola-jegede</a></div></div>
+          <div class="contact-detail"><i class="fas fa-graduation-cap"></i><div><span>Google Scholar</span><a href="https://scholar.google.com/citations?user=y7b6GlEAAAAJ&hl=en" target="_blank" rel="noopener">View profile</a></div></div>
+        </div>
+        <div>
+          <p style="color: var(--muted); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px;">Collaboration Areas</p>
+          <ul class="collab-areas">
+            <li>Public Health Data Analytics</li>
+            <li>Health Services Research</li>
+            <li>Biostatistics & Quantitative Methods</li>
+            <li>Mathematical & Statistical Modeling</li>
+            <li>Substance Use & Overdose Research</li>
+            <li>Infectious Disease Modeling</li>
+            <li>Health Disparities & Community Health</li>
+            <li>Program Evaluation & Survey Research</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Health Services Research · Old Dominion University · Norfolk, Virginia · United States</p>
+  </footer>
+
+  <script>
+    (function () {
+      const photos = document.querySelectorAll('.hero-photo-panel .hero-photo');
+      if (photos.length < 2) return;
+      let current = 0;
+      setInterval(function () {
+        photos[current].classList.remove('active');
+        current = (current + 1) % photos.length;
+        photos[current].classList.add('active');
+      }, 10000);
+    })();
+  </script>
+</body>
+</html>
